@@ -2,7 +2,7 @@ import numpy as np
 from regression_lineaire.read_dataset import read_dataset
 from regression_lineaire.gradiant_descente import gradient_descent
 from regression_lineaire.model import model
-from regression_lineaire.visual import show_model, show_data
+from regression_lineaire.visual import show_model, show_data, print_fct
 from regression_lineaire.coefficient_derivation import coef_det
 
 def linear_regression(dataset, visual = False):
@@ -20,7 +20,10 @@ def linear_regression(dataset, visual = False):
 
 
         X = np.hstack((x_std, np.ones(x.shape)))
-        theta_final = gradient_descent(X, y, theta, learning_rate= 0.015, n_ite = 1900)
+
+        theta_hist = [[0.0, 0.0]]
+
+        theta_final = gradient_descent(X, y, theta, theta_hist, learning_rate= 0.065, n_ite = 190)
         prediction = model(X, theta_final)
 
 
@@ -29,8 +32,9 @@ def linear_regression(dataset, visual = False):
         a = (prediction[1] - prediction[0]) / (x[1] - x[0])
         b = prediction[1] - a*x[1]
         if (visual == True) :
-            show_data(x, y)
-            show_model(x, y, prediction)
+            fig = show_data(x, y, theta_hist, X)
+            print_fct(x, y, a, b, fig, theta_hist, X)
+
     
         print("coef det: ", coef_det(y, prediction)) 
 

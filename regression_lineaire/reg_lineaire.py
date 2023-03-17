@@ -25,14 +25,6 @@ if __name__ == "__main__":
             exit(1)
         print(car.prediction(int(sys.argv[2])))
 
+    if (sys.argv[1] != "train" and sys.argv[1] != "predict"):
+        print("Please enter the command train or predict")
 
-#    parser = argparse.ArgumentParser(description='this program try to estimate the price of a car')
-
-#    parser.add_argument("km", type=int, help="km of the car")
-
-#    args = parser.parse_args()
-
-#    if args.km :
-#        core.linear_regression('./data.csv', args.km)
-#    else:
-#        print("Please enter the number of kilometers of the car")

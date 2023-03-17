@@ -18,7 +18,7 @@ class CarPrice:
 
     def save_parameters(self, theta0, theta1):
         with open('car_price_parameters.txt', 'w') as f:
-            print(theta0, theta1)
+            print("a :", theta0, " b :", theta1)
             f.write(f"{theta0},{theta1}")
 
     def load_parameters(self):
