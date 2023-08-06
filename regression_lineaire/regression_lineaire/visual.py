@@ -9,13 +9,10 @@ def remove_plot(plot):
     line = plot.pop(0)
     line.remove()
 
-# just if you don't want to continue the visu
 def on_close(event):
   plt.figure(1)
   plt.close()
-  exit()
 
-# bullshitclass.. yeah, for real
 class My_event():
   def __init__(self):
     self.skip = False

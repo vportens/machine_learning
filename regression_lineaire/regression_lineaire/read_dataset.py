@@ -9,8 +9,7 @@ def read_dataset(dataset, visual=False):
         data = pd.read_csv(dataset, delimiter=",")
         if len(data) == 0:
             raise ValueError("Le fichier data.csv est corrompu.")
-   # except ValueError as e:
-    #    print(str(e))
+
         x = data.iloc[0:, 0].values
         y = data.iloc[0:, 1].values
 
