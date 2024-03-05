@@ -1,0 +1,3 @@
+[submodule "dslr"]
+	path = dslr
+	url = https://github.com/vportens/dslr
